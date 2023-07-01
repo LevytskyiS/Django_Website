@@ -60,10 +60,35 @@ main .features {
 main .features h1 {font-size: 50px;}
 main .features p {max-width: 400px; margin: 20px auto;}
 
+main .features ul {list-style: none;}
+
+main .features ul li {
+    color: #fff;
+    display: block;
+    margin-top: 20px;
+    transition: transform .4s ease;
+}
+
+main .features ul a {
+    text-decoration: none;
+}
+
+main .features ul li:hover {
+    color: #eb5959;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
 .alert-warning {
     float: left;
     clear: both;
     width: 400px;
     margin: 20px 34%;
     text-align: left;
+}
+
+form {
+    margin-left: 32%;
+    width: 500px;
+    margin-top: 50px;
 }

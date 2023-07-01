@@ -11,10 +11,12 @@
                 <div class="alert alert-warning">
                     <h3>{{ new.title }}</h3>
                     <h3>{{ new.preview }}</h3>
+                    <a href="{% url 'news-detail' new.id %}" class="btn btn-warning">Read More</a>
                 </div>
             {% endfor %}
         {% else %}
             <p>No recent news available at this time...</p>
         {% endif %}
+    </div>
 
 {% endblock %}
