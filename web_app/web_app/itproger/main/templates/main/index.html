@@ -1,12 +1,26 @@
 {% extends 'main/layout.html' %}
 
-{% block title %}Main Page{% endblock %}
+{% block title %}{{ title }}{% endblock %}
 
 {% block content %}
     <div class="features">
-        <h1>Main Page</h1>
+        <h1>{{ title }}</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis in provident non exercitationem illo perferendis reiciendis, iusto, ipsum sit eveniet nam reprehenderit voluptate quod possimus velit, sequi blanditiis. Nostrum, soluta?</p>
         <button class="btn btn-warning">To About Us Page</button>
+
+        {% for el in values %}
+            {% if el == 'Hello' %}
+                <p>{{ el }}</p>
+            {% endif %}
+        {% endfor %}
+
+        <!-- {{ obj.age }} -->
+
+        
+        {% for el in obj.values %}
+            <p>{{ el }}</p>
+        {% endfor %}
+
     </div>
 
     <!-- {% include 'main/test.html' %} -->
