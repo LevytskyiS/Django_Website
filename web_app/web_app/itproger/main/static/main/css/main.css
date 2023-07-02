@@ -1,57 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 body {
-    background: #2c2c2c;
-}
-
-aside {
-    float: left;
-    background: #181811;
-    width: 20%;
-    padding: 2.5%;
     height: 100vh;
+    background-color: #000;
+    background-image: url("https://wallpapercrafter.com/sizes/3840x2160/243302-black-and-white-monochrome-soccer-and-football-hd.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+li {
+    list-style: none;
+
+}
+
+* {
+    text-decoration: none;
     color: #fff;
-    border-right: 5px solid #4d4d4d;
+    font-size: 1rem;
 }
 
-aside img {
-    width: 80px;
-    float: left;
+a {
+    text-decoration: none;
+    color: #fff;
 }
 
-aside .logo {
-    font-size: 35px;
-    margin-left: 10px;
+a:hover {
+    color: #C71585;
+}
+
+/* HEADER */
+header {
+    position: relative;
+    padding: 0 2rem;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a {
+    font-size: 1.5rem;
     font-weight: bold;
-    /* position: relative;
-    top: -5px; */
 }
 
-aside h3 {
-    margin-top: 50px;
-    font-size: 28px;
+.navbar .links {
+    display: flex;
+    gap: 2rem;
 }
 
-aside ul {list-style: none;}
-
-aside ul i {
-    margin-right: 20px;
-}
-
-aside ul li {
+.navbar .toggle_btn {
     color: #fff;
-    display: block;
-    margin-top: 20px;
-    transition: transform .4s ease;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
 }
 
-aside ul a {
-    text-decoration: none;
+.action_btn {
+    background-color: #C71585;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
 }
 
-aside ul li:hover, aside ul a:hover {
-    color: #eb5959;
-    text-decoration: none;
-    transform: scale(1.05);
+.action_btn:hover {
+    scale: 1.05;
+    color: #fff;
 }
+
+.action_btn:active {
+    scale: 0.95;
+}
+
+/* DROPDOWN MENU */
+.dropdown_menu {
+    display: none;
+    position: absolute;
+    right:  2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open{
+    height: 310px;
+}
+
+.dropdown_menu li {
+    z-index: 0;
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu .action_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* HERO */
+section#hero{
+    height: calc(50vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+#hero h1{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+    .navbar .links,
+    .navbar .action_btn {
+        display: none;
+    }
+
+    .navbar .toggle_btn {
+        display: block;
+    }
+
+    .dropdown_menu {
+        display: block;
+    }
+}
+
+@media (max-width: 576px) {
+    .dropdown_menu {
+        left: 2rem;
+        width: unset;
+    }
+}
+
+
+
+
+
 
 main .features {
     float: left;
@@ -96,3 +208,4 @@ form {
     width: 500px;
     margin-top: 50px;
 }
+

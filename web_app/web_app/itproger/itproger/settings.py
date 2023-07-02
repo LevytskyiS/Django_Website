@@ -58,6 +58,8 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+CSRF_TRUSTED_ORIGINS = ["https://djsite.fly.dev"]
+
 ROOT_URLCONF = "itproger.urls"
 
 TEMPLATES = [
