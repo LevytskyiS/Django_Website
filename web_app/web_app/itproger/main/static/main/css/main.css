@@ -108,8 +108,7 @@ header {
 }
 
 .dropdown_menu li {
-    z-index: 0;
-    padding: 0.7rem;
+   padding: 0.7rem;
     display: flex;
     align-items: center;
     justify-content: center;

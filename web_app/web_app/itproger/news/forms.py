@@ -6,7 +6,7 @@ from .models import Article
 class ArticleForm(ModelForm):
     class Meta:
         model = Article
-        fields = ["title", "preview", "full_text", "date"]
+        fields = ["title", "preview", "full_text"]
 
         widgets = {
             "title": TextInput(
@@ -14,9 +14,6 @@ class ArticleForm(ModelForm):
             ),
             "preview": TextInput(
                 attrs={"class": "form-control", "placeholder": "Article Preview"}
-            ),
-            "date": DateTimeInput(
-                attrs={"class": "form-control", "placeholder": "Date of Creation"}
             ),
             "full_text": Textarea(
                 attrs={"class": "form-control", "placeholder": "Text Area"}
