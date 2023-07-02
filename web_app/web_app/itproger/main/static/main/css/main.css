@@ -32,6 +32,10 @@ aside h3 {
 
 aside ul {list-style: none;}
 
+aside ul i {
+    margin-right: 20px;
+}
+
 aside ul li {
     color: #fff;
     display: block;

@@ -33,7 +33,6 @@ def news_home(request):
     return render(request, "news/news_home.html", {"news": news})
 
 
-@csrf_protect
 def create(request):
     error = ""
 
