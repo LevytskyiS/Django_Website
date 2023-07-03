@@ -8,7 +8,6 @@ from .models import Post
 
 
 def news_home(request):
-    # posts = Post.objects.all()
     posts = Post.objects.order_by("-create_at")
     return render(request, "news/news_home.html", {"posts": posts})
 
@@ -19,7 +18,6 @@ class PostListView(ListView):
     context_object_name = "posts"
 
     def get_queryset(self):
-        print(Post.objects.filter(category__slug=self.kwargs.get("slug")))
         return Post.objects.filter(category__slug=self.kwargs.get("slug"))
 
 
