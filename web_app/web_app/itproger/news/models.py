@@ -42,6 +42,15 @@ class Post(models.Model):
         Category, related_name="post", on_delete=models.SET_NULL, null=True
     )
     tags = models.ManyToManyField(Tag, related_name="post")
+    slug = models.SlugField(max_length=200, default="")
+
+    def get_absolute_url(self):
+        return reverse(
+            "post_single", kwargs={"slug": self.category.slug, "post_slug": self.slug}
+        )
+
+    def __str__(self):
+        return self.title
 
 
 class Comment(models.Model):

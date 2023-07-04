@@ -18,15 +18,18 @@ class PostListView(ListView):
     context_object_name = "posts"
 
     def get_queryset(self):
-        return Post.objects.filter(category__slug=self.kwargs.get("slug"))
+        return Post.objects.filter(
+            category__slug=self.kwargs.get("slug")
+        ).select_related("category")
 
 
 # from .models import Article
 # from .forms import ArticleForm
 
 
-class NewsDetailView(DetailView):
+class PostDetailView(DetailView):
     model = Post
+    slug_url_kwarg = "post_slug"
     template_name = "news/details_view.html"
     context_object_name = "post"
 
