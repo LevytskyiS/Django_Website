@@ -61,7 +61,7 @@ MIDDLEWARE = [
 
 CSRF_TRUSTED_ORIGINS = ["https://djsite.fly.dev"]
 
-ROOT_URLCONF = "itproger.urls"
+ROOT_URLCONF = "config.urls"
 
 TEMPLATES = [
     {
@@ -80,7 +80,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "itproger.wsgi.application"
+WSGI_APPLICATION = "config.wsgi.application"
 
 
 # Database
