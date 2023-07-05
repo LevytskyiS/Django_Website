@@ -1,4 +1,4 @@
-{% load static %}
+{% load static right_side_menu %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,6 +24,9 @@
     </header>
 
     <main>
+        <div>
+            {% get_categories %}
+        </div>
         {% block content %}
         {% endblock %}
     </main>
