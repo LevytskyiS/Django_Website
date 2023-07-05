@@ -9,9 +9,8 @@
         {% if posts %}
             {% for post in posts %}
                 <div>
-                    <h5><a href="{{ post.get_absolute_url }}">{{ post.title }}</h5></a><br>
-                    <h6>{{ post.author }}</h6>
-                    <span>{{ post.create_at|date:"d M" }}</span><br>
+                    <h5><a href="{{ post.get_absolute_url }}">{{ post.title }}</h5></a>
+                    <h6>{{ post.category }}</h6>
                     <h6>{{ post.text|slice:":100" }}</h6><br>
                     
                 </div>

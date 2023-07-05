@@ -18,12 +18,13 @@ class NewsView(ListView):
 class PostListView(ListView):
     model = Post
     context_object_name = "posts"
-    ordering = "-create_at"
 
     def get_queryset(self):
-        return Post.objects.filter(
-            category__slug=self.kwargs.get("slug")
-        ).select_related("category")
+        return (
+            Post.objects.filter(category__slug=self.kwargs.get("slug"))
+            .select_related("category")
+            .order_by("-create_at")
+        )
 
 
 class PostDetailView(DetailView):

@@ -4,18 +4,14 @@
 
 {% block content %}
     <div class="features">
-        <h3>Latest News</h3>
-    
 
         {% if posts %}
-            <span>Category: {{ posts.first.category.name }}</span>
+            <span>{{ posts.first.category.name }}</span><br><br>
 
             {% for post in posts %}
                 <div>
-                    <h5>{{ post.title }}</h5><br>
-                    <h6>{{ post.author }}</h6><br>
+                    <h5><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h5>
                     <h6>{{ post.text|slice:":100" }}</h6>
-                    <span>{{ post.create_at|date:"d M" }}</span>
                 </div>
             {% endfor %}
         {% else %}
