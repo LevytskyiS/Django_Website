@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Contacts{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for contact in contacts %}
+        <li>
+            <img class="contact_icon" src="{{ contact.icon.url }}" alt="" width="10">
+            <span>{{ contact.name }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+    <form action="{% url 'feedback' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Add</button>
+    </form>
+{% endblock %}
