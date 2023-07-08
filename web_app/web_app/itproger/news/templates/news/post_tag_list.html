@@ -6,7 +6,7 @@
     <div class="features">
 
         {% if posts %}
-            <span><a href="{{ posts.first.category.get_absolute_url }}">{{ posts.first.category.name }}</a></span><br><br>
+            <span>{{ posts.first.category.name }}</span><br><br>
 
             {% for post in posts %}
                 <div>
@@ -14,7 +14,6 @@
                     <h6>{{ post.text|slice:":100" }}</h6>
                 </div>
             {% endfor %}
-
         {% else %}
             <p>No recent news available at this time...</p>
         {% endif %}

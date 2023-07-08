@@ -17,6 +17,9 @@ class Category(MPTTModel):
         blank=True,
     )
 
+    def get_absolute_url(self):
+        return reverse("post_list", kwargs={"slug": self.slug})
+
     def __str__(self):
         return self.name
 
@@ -31,6 +34,9 @@ class Tag(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse("post_tag_list", kwargs={"tag_slug": self.slug})
+
 
 class Post(models.Model):
     author = models.ForeignKey(User, related_name="posts", on_delete=models.CASCADE)
@@ -44,13 +50,16 @@ class Post(models.Model):
     tags = models.ManyToManyField(Tag, related_name="post")
     slug = models.SlugField(max_length=200, default="")
 
+    def __str__(self):
+        return self.title
+
     def get_absolute_url(self):
         return reverse(
             "post_single", kwargs={"slug": self.category.slug, "post_slug": self.slug}
         )
 
-    def __str__(self):
-        return self.title
+    def get_comment(self):
+        return self.comment.all()
 
 
 class Comment(models.Model):

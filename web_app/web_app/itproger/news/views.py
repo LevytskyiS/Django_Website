@@ -16,7 +16,7 @@ from .forms import CommentForm
 
 class NewsView(ListView):
     model = Post
-    paginate_by = 5
+    paginate_by = 3
     template_name = "news/news_home.html"
     context_object_name = "posts"
     ordering = "-create_at"
@@ -57,3 +57,13 @@ class CreateComment(CreateView):
 
     def get_success_url(self) -> str:
         return self.object.post.get_absolute_url()
+
+
+class PostTagListView(ListView):
+    model = Post
+    context_object_name = "posts"
+
+    def get_queryset(self):
+        return Post.objects.filter(tags__slug=self.kwargs.get("tag_slug")).order_by(
+            "-create_at"
+        )
