@@ -1,10 +1,17 @@
-from typing import Any
+from typing import Any, Dict
 from django.db.models.query import QuerySet
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_protect
-from django.views.generic import DetailView, ListView, DeleteView, UpdateView
+from django.views.generic import (
+    DetailView,
+    ListView,
+    CreateView,
+    DeleteView,
+    UpdateView,
+)
 
-from .models import Post
+from .models import Post, Comment
+from .forms import CommentForm
 
 
 class NewsView(ListView):
@@ -32,3 +39,21 @@ class PostDetailView(DetailView):
     slug_url_kwarg = "post_slug"
     template_name = "news/details_view.html"
     context_object_name = "post"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["form"] = CommentForm()
+        return context
+
+
+class CreateComment(CreateView):
+    model = Comment
+    form_class = CommentForm
+
+    def form_valid(self, form):
+        form.instance.post_id = self.kwargs.get("pk")
+        self.object = form.save()
+        return super().form_valid(form)
+
+    def get_success_url(self) -> str:
+        return self.object.post.get_absolute_url()

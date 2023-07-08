@@ -56,24 +56,10 @@ class Post(models.Model):
 class Comment(models.Model):
     name = models.CharField(max_length=50)
     email = models.CharField(max_length=100)
-    website = models.CharField(max_length=150)
+    website = models.CharField(max_length=150, blank=True, null=True)
     message = models.TextField(max_length=500)
+    create_at = models.DateTimeField(auto_now_add=True)
     post = models.ForeignKey(Post, related_name="comment", on_delete=models.CASCADE)
 
-
-# # Create your models here.
-# class Article(models.Model):
-#     title = models.CharField("Title", max_length=50)
-#     preview = models.CharField("Preview", max_length=250)
-#     full_text = models.TextField("Article")
-#     date = models.DateField(default=timezone.now)
-
-#     def __str__(self):
-#         return self.title
-
-#     def get_absolute_url(self):
-#         return f"/news/{self.id}"
-
-#     class Meta:
-#         verbose_name = "New"
-#         # verbose_name_plural = "News"
+    def __str__(self):
+        return self.message

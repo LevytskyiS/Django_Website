@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+{% load social_tags %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+
+    {{ about.text|safe }}
+    <img src="{{ about.get_first_image }}" alt="" width="200"><br>
+    {% for item in about.get_images %}
+        <img src="{{ item.image.url }}" alt="{{ item.alt }}" width="100">
+    {% endfor %}
+    <br>
+    <br>
+    {% get_social_links as social_links %}
+    {% for item in social_links %}
+        <a href="{{ item.link }}" target="_blank"><img src="{{ item.icon.url }}" alt="" width="200"></a><br>
+    {% endfor %}
+    
+{% endblock %}
