@@ -17,7 +17,7 @@
                         <p>{{ post.text|slice:":100" }}</p>
                     </div>
                     <div class="new-category">
-                        <p>{{ post.category }}</p>
+                        <a href="{{ post.category.get_absolute_url }}">{{ post.category }}</a>
                     </div>
                     {% endfor %}
                 {% else %}

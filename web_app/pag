@@ -1,0 +1,16 @@
+    <div class="features">
+
+        {% if posts %}
+            <span><a href="{{ posts.first.category.get_absolute_url }}">{{ posts.first.category.name }}</a></span><br><br>
+
+            {% for post in posts %}
+                <div>
+                    <h5><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h5>
+                    <h6>{{ post.text|slice:":100" }}</h6>
+                </div>
+            {% endfor %}
+
+        {% else %}
+            <p>No recent news available at this time...</p>
+        {% endif %}
+    </div>

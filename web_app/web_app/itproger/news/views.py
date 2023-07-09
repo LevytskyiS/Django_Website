@@ -24,6 +24,7 @@ class NewsView(ListView):
 
 class PostListView(ListView):
     model = Post
+    paginate_by = 3
     context_object_name = "posts"
 
     def get_queryset(self):
@@ -61,7 +62,9 @@ class CreateComment(CreateView):
 
 class PostTagListView(ListView):
     model = Post
+    paginate_by = 3
     context_object_name = "posts"
+    template_name = "news/post_tag_list.html"
 
     def get_queryset(self):
         return Post.objects.filter(tags__slug=self.kwargs.get("tag_slug")).order_by(
