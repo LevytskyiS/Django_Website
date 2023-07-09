@@ -3,18 +3,27 @@
 
 {% block title %}About Us{% endblock %}
 
-{% block content %}
+{% block about %}
 
-    {{ about.text|safe }}
-    <img src="{{ about.get_first_image }}" alt="" width="200"><br>
-    {% for item in about.get_images %}
-        <img src="{{ item.image.url }}" alt="{{ item.alt }}" width="100">
-    {% endfor %}
-    <br>
-    <br>
-    {% get_social_links as social_links %}
-    {% for item in social_links %}
-        <a href="{{ item.link }}" target="_blank"><img src="{{ item.icon.url }}" alt="" width="200"></a><br>
-    {% endfor %}
-    
+<section id="about" class="about">
+    <div class="container">
+        <h2>About us</h2>
+        <div class="description">
+            <div class="disc-left">
+                <h3>Seeking the truth</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates quae libero incidunt beatae vero pariatur cum quo error sapiente porro, nesciunt, quasi doloremque minima temporibus hic ex? Consequatur, soluta illum.</p>
+            </div>
+            <div class="disc-right">
+                <h3>Helping people to understand the football world</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates quae libero incidunt beatae vero pariatur cum quo error sapiente porro, nesciunt, quasi doloremque minima temporibus hic ex? Consequatur, soluta illum.</p>
+            </div>
+        </div>
+        <div class="gallery">
+            {% for item in about.get_images %}
+                <img src="{{ item.image.url }}" alt="{{ item.alt }}" width="350">
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
 {% endblock %}

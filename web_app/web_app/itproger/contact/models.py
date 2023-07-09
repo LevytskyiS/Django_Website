@@ -33,7 +33,7 @@ class About(models.Model):
         return item.image.url
 
     def get_images(self):
-        return self.about_images.order_by("id")[1:]
+        return self.about_images.order_by("id")
 
 
 class ImageAbout(models.Model):

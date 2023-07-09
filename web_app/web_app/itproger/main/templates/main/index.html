@@ -2,21 +2,10 @@
 
 {% block title %}Main page{% endblock %}
 
-{% block content %}
-    <section id="hero">
-        <h1>Welcome</h1>
-        <p>
-            The Football News seeks the truth and helps people understand the football world
-        </p>
-    </section>
-    <div class="features">
-    </div>
-
-    {#<!-- {% include 'main/test.html' %} -->#}
-    {#<!-- Подключение отдельного блока кода -->#}
-
-    <div>
-        <h3><a href="{% url 'news_home' %}">Go to the 'Latest News'</a></h3>
-    </div>
-
+{% block index %}
+<div class="offer">
+    <p>Not the game. The life</p>
+    <h1>Football News</h1>
+    <a href="{% url 'news_home' %}">Latest news</a>
+</div>
 {% endblock %}
