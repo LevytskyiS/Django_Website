@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<form method="POST">
+    {% csrf_token %}
+
+    <div class="form-error">{{ form.non_field_errors }}</div>
+
+    {% for f in form %}
+    <p><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</p>
+    <div class="form-error">{{ f.errors }}</div>
+    {% endfor %}
+    <button type="submit">Log in</button>
+    <input type="hidden" name="next" value="{% url 'home' %}">
+    {# <div class="small text-center"> #}
+       {# <a href="{% url 'quoteapp:password_reset' %}" class="text-center"><i>Forgot Password?</i></a> #}
+    {# </div> #}
+</form>
+
+{% endblock %}

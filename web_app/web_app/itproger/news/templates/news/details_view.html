@@ -45,6 +45,7 @@
                 {% endfor %}
             </div>
         </div>
+        {% if request.user.is_authenticated %}
         <div class="add-comment">
             <h3>Leave a comment</h3>
             <form action="{% url 'create_comment' pk=post.id %}" method="post">
@@ -57,5 +58,10 @@
                 <button type="reset">Reset</button>
             </form>
         </div>
+        {% else %}
+        <div class="container">
+            <p>Sign in to leave a comment</p>
+        </div>
+        {% endif %}
     </div>
 {% endblock %}

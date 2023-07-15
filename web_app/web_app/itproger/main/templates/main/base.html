@@ -24,6 +24,11 @@
                         <li><a href="{% url 'about' %}"><li>About Us</a></li>
                         <li><a href="{% url 'news_home' %}"><li>News</a></li>
                         <li><a href="{% url 'contact' %}"><li>Get in touch</a></li>
+                        {% if request.user.is_authenticated %}
+                        <li>{{ user.username }} | <a href="{% url 'logout' %}">Log out</a></li>
+                        {% else %}
+                        <li><a href="{% url 'register' %}">Registration</a> | <a href="{% url 'login' %}">Log in</a></li>
+                        {% endif %}
                     </ul>
                     <a href="tel:+420777111333" class="tel"><img src="{% static 'main/img/phone.svg' %}" alt="Phone" height="40"></a>
             </div>
