@@ -5,25 +5,27 @@
 
 {% block about %}
 
-<section id="about" class="about">
+<div id="about" class="about">
     <div class="container">
-        <h2>About us</h2>
-        <div class="description">
-            <div class="disc-left">
-                <h3>Seeking the truth</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates quae libero incidunt beatae vero pariatur cum quo error sapiente porro, nesciunt, quasi doloremque minima temporibus hic ex? Consequatur, soluta illum.</p>
+        <div class="about-wrapper">
+            <h2>About us</h2>
+            <div class="description">
+                <div class="disc-left">
+                    <h3>Seeking the truth</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut sit corporis officiis, tempora quisquam sed, voluptate ratione molestiae iste facere perspiciatis exercitationem illum magni amet pariatur quo sint? Et, sit voluptatem veniam in pariatur quibusdam a exercitationem cupiditate nostrum possimus ratione alias ex nam consectetur praesentium mollitia, voluptatibus sed. Ullam, aperiam quasi! Deserunt quos odit esse distinctio saepe perspiciatis quis cumque, doloremque aliquid tempore odio quibusdam laudantium. Enim atque voluptas minima quas vel porro ea quam incidunt consequuntur officiis molestias nihil, nesciunt voluptate numquam nobis, exercitationem vitae? Quia dolorem aut quaerat tempore ipsam officiis voluptates mollitia sed totam debitis ipsum eius cumque cupiditate doloribus accusantium, iusto dicta vero neque odio consequuntur sint? Eius repudiandae aspernatur magni asperiores quo esse voluptatem deserunt, totam tempora fugiat ex sed porro, a dolorum assumenda cupiditate labore ab iusto laborum consequuntur odit. Et, nobis! Consequuntur, esse? Facere consequuntur iusto dolor tempora culpa obcaecati nulla dolorum error, aliquid laudantium iure distinctio! Accusantium consequatur non, debitis totam mollitia quod, optio labore quibusdam ipsum esse modi ipsa sapiente repudiandae incidunt eos minus ab iure facere, quas molestiae! Facilis, in rerum. Ut dicta ex officiis illum unde in! Quidem deleniti iusto voluptatum eius, corporis deserunt explicabo quaerat aliquam rerum ab magni tenetur sit soluta mollitia. Aperiam tempora recusandae deserunt quas fugiat sapiente ab vero in culpa. A maiores architecto inventore. Hic illo id tempora consequuntur natus aliquid sed voluptate magnam quibusdam dolorem esse eligendi cupiditate, ipsa nemo deserunt, doloremque eius? Nemo maxime, aperiam incidunt error eveniet quis! Exercitationem, ipsum quas iusto ex officia, facilis eaque, ducimus vel quod necessitatibus odio mollitia labore vero dolores molestias ipsa magnam veritatis quasi. Iste repellendus, non excepturi recusandae officiis iusto autem amet fuga odit quaerat harum saepe quia commodi assumenda voluptates modi illum exercitationem sed accusantium debitis vitae vero? Illum voluptatibus nisi blanditiis.</p>
+                </div>
+                <div class="disc-right">
+                    <h3>Helping people to understand the football world</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit cupiditate ab quis, cum alias laborum iste perspiciatis obcaecati sunt labore quas iure sed recusandae libero similique odit assumenda hic laudantium a temporibus animi, optio asperiores. Quaerat ut earum dolores quos placeat nostrum laboriosam iure, temporibus eaque corporis nobis unde laudantium!</p>
+                </div>
             </div>
-            <div class="disc-right">
-                <h3>Helping people to understand the football world</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates quae libero incidunt beatae vero pariatur cum quo error sapiente porro, nesciunt, quasi doloremque minima temporibus hic ex? Consequatur, soluta illum.</p>
+            <div class="gallery">
+                {% for item in about.get_images %}
+                    <img src="{{ item.image.url }}" alt="{{ item.alt }}" width="180" height="350">
+                {% endfor %}
             </div>
-        </div>
-        <div class="gallery">
-            {% for item in about.get_images %}
-                <img src="{{ item.image.url }}" alt="{{ item.alt }}" width="200" height="350">
-            {% endfor %}
         </div>
     </div>
-</section>
+</div>
 
 {% endblock %}

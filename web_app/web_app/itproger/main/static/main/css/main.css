@@ -144,14 +144,15 @@ header a {
 
 .offer a {
 	display: block;
-	letter-spacing: 0.1em;
 	text-transform: uppercase;
 	margin: 50px 0;
 	color: black;
 	font-size: 20px;
+	width: 20%;
+	letter-spacing: 0.11em;
 }
 
-.menu li a:hover {
+.offer a:hover {
 	border-bottom: 1px solid black;
 }
 
@@ -171,6 +172,19 @@ header a {
     color: #000;
 }
 
+/* ABOUT */
+.about-wrapper {
+	display: flex;
+	flex-direction: column;
+	width: 70%;	
+}
+
+.about-wrapper h2 {
+	text-align: center;
+	padding: 5% 0;
+	margin: 0;
+}
+
 .description {
 	display: flex;
 	justify-content: space-between;
@@ -181,15 +195,29 @@ header a {
 	font-weight: 400;
 	text-align: justify;
 	line-height: 1.67em;
-	padding-right: 10%;
 }
 
-.desc-left, .desc-right {
-	width: 567px;
+.description h3 {
+	font-size: 20px;
+	letter-spacing: 0.05rem;
+}
+
+.disc-left {
+	display: flex;
+	width: 50%;
+	flex-direction: column;
+	padding-right: 2%;
+}
+
+.disc-right {
+	display: flex;
+	flex-direction: column;
+	padding-left: 2%;
+	width: 50%;
 }
 
 .gallery {
-	margin-top: 67px;
+	margin: 3% 0 7% 0;
 	display: flex;
 	justify-content: space-between;
 }
