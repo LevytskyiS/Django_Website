@@ -18,23 +18,27 @@
     <header id="header" class="header">
         <div class="container">
             <div class="nav">
-                <img src="{% static 'main/img/football.svg' %}" alt="Football Ball" class="logo" height="50">
-                    <ul class="menu">
-                        <li><a href="{% url 'home' %}">Main Page</a></li>
-                        <li><a href="{% url 'about' %}"><li>About Us</a></li>
-                        <li><a href="{% url 'news_home' %}"><li>News</a></li>
-                        <li><a href="{% url 'contact' %}"><li>Get in touch</a></li>
-                        {% if request.user.is_authenticated %}
-                        <li>{{ user.username }} | <a href="{% url 'logout' %}">Log out</a></li>
-                        {% else %}
-                        <li><a href="{% url 'register' %}">Registration</a> | <a href="{% url 'login' %}">Log in</a></li>
-                        {% endif %}
-                    </ul>
-                    <a href="tel:+420777111333" class="tel"><img src="{% static 'main/img/phone.svg' %}" alt="Phone" height="40"></a>
+                <ul class="menu">
+                    <li><a href="{% url 'home' %}">Main Page</a></li>
+                    <li><a href="{% url 'about' %}"><li>About Us</a></li>
+                    <li><a href="{% url 'news_home' %}"><li>News</a></li>
+                    <li><a href="{% url 'contact' %}"><li>Get in touch</a></li>
+                </ul>
+                <ul class="sign-in">
+                    {% if request.user.is_authenticated %}
+                    <li>{{ user.username.upper }}</li>
+                    <li><a href="{% url 'logout' %}">Log out</a></li>
+                    {% else %}
+                    <li><a href="{% url 'register' %}">Registration</a></li>
+                    <li><a href="{% url 'login' %}">Log in</a></li>
+                    {% endif %}
+                </ul>
             </div>
-            {% block index %}{% endblock %}
+            
         </div>
     </header>
+
+    {% block index %}{% endblock %}
 
     {% block about %}{% endblock %}
 
@@ -44,14 +48,18 @@
 
     <footer id="footer" class="footer">
         <div class="container">
-            <div class="footer-links">
-                {% get_social_links as social_links %}
-                {% for item in social_links %}
-                    <a href="{{ item.link }}" target="_blank"><img src="{{ item.icon.url }}" alt="" width="50"></a><br>
-                {% endfor %}
-            </div>
-            <div class="footer-text">
-                <p>© 2023 The Football News Company. All rights reserved.</p>
+            <div class="footer-wrap">
+                <div class="footer-links">
+                    {% get_social_links as social_links %}
+                    <ul class="soc-links">
+                    {% for item in social_links %}
+                        <li><a href="{{ item.link }}" target="_blank"><img src="{{ item.icon.url }}" alt="" width="30"></a></li>
+                    {% endfor %}
+                    </ul>
+                </div>
+                <div class="footer-text">
+                    <p>© 2023 The Football News Company. All rights reserved.</p>
+                </div>
             </div>
         </div>
 
@@ -61,8 +69,3 @@
     
 </body>
 </html>
-    <!-- <main>
-        <div>
-            {% get_categories %}
-        </div>
-    </main> -->  {#  {% block content %}{% endblock %} #}

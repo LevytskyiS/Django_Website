@@ -1,0 +1,5 @@
+    <!-- <main>
+        <div>
+            {% get_categories %}
+        </div>
+    </main> -->  {#  {% block content %}{% endblock %} #}

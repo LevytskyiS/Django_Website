@@ -45,70 +45,114 @@ ul, li {
 }
 
 .container {
-	width: 1170px;
 	/*позиционирование по центру*/
-	margin: 0 auto; 
+	max-width: 1366px;
+	margin: 0px auto; 
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 .header {
 	background: url("../img/rrt1.jpg") no-repeat center top / cover;
-	padding-top: 57px;
 	color: #fff;
-	padding-bottom: 322px
+	min-height: 10vh;
 }
 
 header a {
 	color: #fff;
 }
 
-.logo {
-	margin-right: 69px;
+.nav {
+	display: flex;
+	align-items: center;
+	height: 10vh;
+	width: 100%;
+	justify-content: space-between;
+	box-sizing: border-box;
+
 }
 
 .menu {
 	display: flex;
+	justify-content: space-between;
+  	align-items: center;
+	width: 50%;
+	height: 100%;
+}
+
+.sign-in {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 30%;
+	height: 100%;
 }
 
 .menu li a {
 	text-transform: uppercase;
-	font-size: 14px;
+	font-size: 20px;
 	letter-spacing: 0.1em;
+	margin: 0 10px;
+}
+
+.sign-in > li {
+	margin: 0 5%;
+	font-size: 20px;
+	letter-spacing: 0.1em;
+}
+
+.sign-in li a {
+	text-transform: uppercase;
+	font-size: 20px;
+	letter-spacing: 0.1em;
+	margin: 0 10px;
 }
 
 .menu li a:hover {
 	border-bottom: 1px solid #fff;
 }
 
-.menu li {
-	margin-right: 40px;
-}
-
-.tel {
-	font-size: 17px;
-	margin-left: auto;
-	letter-spacing: 0.1em;
-}
-
-.nav {
+.index-wrapper {
 	display: flex;
-	align-items: center;
+	width: 100%;
+	height: 75vh;
 }
 
 .offer {
+	display: flex;
+	flex-direction: column;
 	text-transform: uppercase;
-	margin-top: 216px;
+	justify-content: flex-start;
+	padding-top: 3%;
 }
 
 .offer p {
 	font-size: 30px;
 	letter-spacing: 0.1em;
+	display: block;
+	margin-bottom: 1% 0;
 }
 
 .offer h1 {
 	font-size: 100px;
-	margin-bottom: 19px;
-	margin-top: -9px;
-	letter-spacing: 0.02em
+	letter-spacing: 0.02em;
+	display: block;
+	
+}
+
+.offer a {
+	display: block;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	margin: 50px 0;
+	color: black;
+	font-size: 20px;
+}
+
+.menu li a:hover {
+	border-bottom: 1px solid black;
 }
 
 .btn {
@@ -159,35 +203,73 @@ header a {
 	transform: scale(1.1);
 }
 
-.footer-text {
-	font-size: 15px;
-	font-family: 'Open Sans', sans-serif;
-	display: flex;
-	padding: 114px 0;
+.footer {
+	background-color: black;
 }
 
-/* .footer-text a {
-	margin-right: 67px;
-} */
-
-.footer-text p {
-	margin-right: 67px;
-	margin: auto;
+.footer-wrap {
+	display: flex;
+	align-items: center;
+	height:15vh;
+	width: 100%;
+	flex-direction: column;
+	justify-content: space-evenly;
+	box-sizing: border-box;
+	background-color: black;
 }
 
 .footer-links {
 	display: flex;
-	font-size: 15px;
+	width: 30%;
+	height: 40%;
+	justify-content: center;
+	align-items: center;
+	/* font-size: 15px;
 	font-family: 'Open Sans', sans-serif;
-	padding: 60px 0;
+	padding: 60px 0; */
 }
 
-.footer-links a {
+.footer-text {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 25%;
+	width: 40%;
+	
+	/* font-size: 15px;
+	font-family: 'Open Sans', sans-serif;
+	padding: 114px 0; */
+}
+
+.soc-links {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 70%;
+	height: 70%;
+}
+
+.soc-links li {
+	display: flex;
+	margin: 0 5%;
+	justify-content: center;
+	align-items: center;
+}
+
+.footer-text p {
+	text-transform: uppercase;
+	font-size: 18px;
+	letter-spacing: 0.05em;
+	padding: 1%;
+	color: white;
+}
+
+/* .footer-links a {
 	display: inline-block;
 	margin-right: 67px;
 	align-items: center;
 	margin: auto;
-}
+} */
 
 .new-title {
 	margin-top: 4%;
@@ -228,3 +310,5 @@ header a {
   	justify-content: space-between;
 	margin-bottom: 3%;
 }
+
+/* <li><img src="{% static 'main/img/football.svg' %}" alt="Football Ball" class="logo" height="50"></li> */

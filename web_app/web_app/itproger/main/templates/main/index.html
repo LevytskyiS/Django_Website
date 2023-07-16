@@ -3,9 +3,15 @@
 {% block title %}Main page{% endblock %}
 
 {% block index %}
-<div class="offer">
-    <p>Not the game. The life</p>
-    <h1>Football News</h1>
-    <a href="{% url 'news_home' %}">Latest news</a>
+<div class="bbody">
+    <div class="container">
+        <div class="index-wrapper">
+            <div class="offer">
+                <p>Not the game. The life</p>
+                <h1>Football News</h1>
+                <a href="{% url 'news_home' %}">Latest news</a>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
