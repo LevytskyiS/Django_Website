@@ -231,6 +231,153 @@ header a {
 	transform: scale(1.1);
 }
 
+/* DETAIL VIEW */
+.detail-wrapper {
+	display: flex;
+	flex-direction: column;
+	width: 70%;
+}
+
+.new-detail {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 3%;
+}
+
+.new-detail h3 {
+	margin: 3% 0;
+	text-align: center;
+	letter-spacing: 0.1rem;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.new-detail img {
+	margin-bottom: 3%;
+}
+
+.new-detail h5 {
+	margin-bottom: 3%;
+	text-align: center;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 21px;
+}
+
+.new-detail p {
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 20px;
+	line-height: 25px;
+	text-align: justify;
+}
+
+.detail-tags {
+	margin-bottom: 5%;
+}
+
+.detail-tags a {
+	color: #000;
+	text-decoration: none;
+	margin-right: 1%;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.comments-all {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 4%;
+}
+
+.comments-all p {
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 20px;
+	line-height: 25px;
+}
+
+.comment-count {
+	margin-bottom: 3%;
+}
+
+.comments {
+	border-top: 0.2rem solid black;
+	border-left: 0.2rem solid black;
+	border-right: 0.2rem solid black;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding-right: 1%;
+}
+
+.comments img {
+	width: 8%;
+}
+
+.auth-name {
+	width: 14%;
+	padding-left: 3%;
+
+}
+
+.com-create {
+	width: 78%;
+	text-align: end;
+}
+
+.com-message {
+	margin-bottom: 3%;
+	/* padding-bottom: 1%; */
+	border-bottom: 0.2rem solid black;
+	border-left: 0.2rem solid black;
+	border-right: 0.2rem solid black;
+	padding-left: 1%;
+}
+
+.add-comment {
+	margin-bottom: 10%;
+}
+
+.form-name input {
+
+	width: 33%;
+	height: 40px;
+	margin-bottom: 3%;
+	border: 0.2rem solid black;
+	border-radius: 30px;
+	padding-left: 10px;
+
+}
+
+.form-message input {
+	width: 100%;
+	height: 50px;
+	padding-left: 10px;
+	margin-bottom: 3%;
+	border: 0.2rem solid black;
+	border-radius: 30px;
+}
+
+.sub-but {
+	margin-right: 20px;
+    background-color: greenyellow;
+    color: black;
+    border:none;
+	border: 0.2rem solid black;
+	border-radius: 30px;
+	width: 100px;
+	height: 40px
+}
+
+.res-but {
+	margin-right: 20px;
+    background-color: red;
+    color: black;
+    border:none;
+	border: 0.2rem solid black;
+	border-radius: 30px;
+	width: 100px;
+	height: 40px
+}
+
+
+/* FOOTER */
 .footer {
 	background-color: black;
 }
