@@ -16,7 +16,7 @@ from .forms import CommentForm
 
 class NewsView(ListView):
     model = Post
-    paginate_by = 3
+    paginate_by = 5
     template_name = "news/news_home.html"
     context_object_name = "posts"
     ordering = "-create_at"
