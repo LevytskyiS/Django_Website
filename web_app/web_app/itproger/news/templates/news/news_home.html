@@ -24,7 +24,8 @@
                     {% else %}
                         <p>No recent news available at this time...</p>
                     {% endif %}
-                </div>           
+                </div>      
+                 {% if posts %}     
                 <div class="step-links">
                     {% if page_obj.has_previous %}
                         <a href="?page=1">FIRST</a>
@@ -39,6 +40,7 @@
                         <a href="?page={{ page_obj.next_page_number }}">NEXT</a>
                         <a href="?page={{ page_obj.paginator.num_pages }}">LAST</a>
                     {% endif %}
+                {% endif %}
                 </div>
             </div>
         </div>

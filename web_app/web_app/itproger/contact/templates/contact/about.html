@@ -11,17 +11,25 @@
             <h2>About us</h2>
             <div class="description">
                 <div class="disc-left">
-                    <h3>Seeking the truth</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam eveniet assumenda ea, quos autem tempore repellat aspernatur modi beatae, quidem at dolores placeat recusandae facilis iusto cumque, in laudantium eos molestias maxime ex. Eveniet, eum aperiam? Id animi fugiat delectus nesciunt cum? Quisquam atque, adipisci quibusdam eaque sapiente eius! Vitae sit nemo quasi cupiditate sapiente, aspernatur dolorem et iusto, minus natus inventore, asperiores repellat quia iure similique laborum incidunt expedita eius. Fuga exercitationem adipisci laborum ut consequatur, beatae similique dignissimos?</p>
+                    <div class="ds-left-title">
+                        <h3>Seeking the truth</h3>
+                    </div>
+                    <div class="ds-left-text">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam eveniet assumenda ea, quos autem tempore repellat aspernatur modi beatae, quidem at dolores placeat recusandae facilis iusto cumque, in laudantium eos molestias maxime ex. Eveniet, eum aperiam? Id animi fugiat delectus nesciunt cum? Quisquam atque, adipisci quibusdam eaque sapiente eius! Vitae sit nemo quasi cupiditate sapiente, aspernatur dolorem et iusto, minus natus inventore, asperiores repellat quia iure similique laborum incidunt expedita eius. Fuga exercitationem adipisci laborum ut consequatur, beatae similique dignissimos?</p>
+                    </div>
                 </div>
                 <div class="disc-right">
-                    <h3>Helping people to understand the football world</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit cupiditate ab quis, cum alias laborum iste perspiciatis obcaecati sunt labore quas iure sed recusandae libero similique odit assumenda hic laudantium a temporibus animi, optio asperiores. Quaerat ut earum dolores quos placeat nostrum laboriosam iure, temporibus eaque corporis nobis unde laudantium!</p>
+                    <div class="ds-right-title">
+                        <h3>Helping people to understand the football world</h3>
+                    </div>
+                    <div class="ds-right-text">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae necessitatibus fugiat commodi, odit minima tenetur consequatur veniam accusantium mollitia, ut expedita perferendis beatae obcaecati itaque corporis quidem molestiae suscipit hic adipisci, facilis voluptatum est nisi? Doloribus quis, doloremque nesciunt est sint suscipit vel eveniet hic aperiam ducimus quo fugiat, tenetur officiis fugit itaque in sequi, architecto similique ipsam consequatur! Vero cumque voluptatem atque repellendus. Aut cum laudantium, accusantium iure temporibus rerum hic dicta, consectetur nam, sed nesciunt animi dolores. Saepe!</p>
+                    </div>
                 </div>
             </div>
             <div class="gallery">
                 {% for item in about.get_images %}
-                    <img src="{{ item.image.url }}" alt="{{ item.alt }}" width="180" height="350">
+                    <img src="{{ item.image.url }}" alt="{{ item.alt }}" width="130" height="300">
                 {% endfor %}
             </div>
         </div>

@@ -4,22 +4,44 @@
 
 {% block content %}
     <div class="container">
-        <h3>You may reach us at:</h3>
-        <div class="contact-way">
-            <ul>
-                {% for contact in contacts %}
-                <li>
-                    <a href="{{ contact.name }}" class="contact-links" target="_blank"><img class="contact_icon" src="{{ contact.icon.url }}" alt="" width="20" height="20"></a>
-                </li>
-                {% endfor %}
-            </ul>
+        <div class="contact-wrapper">
+            <div class="socials">
+                <div class="socials-text">
+                <h3>You may reach us at:</h3>
+                </div>
+                <div class="socials-list">
+                    <ul>
+                        {% for contact in contacts %}
+                        <li>
+                            <a href="{{ contact.name }}" class="socials-links" target="_blank"><img class="contact_icon" src="{{ contact.icon.url }}" alt="" width="40" height="40"></a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                
+            </div>
+            <div class="contact-form">
+                <div class="cont-form-text">
+                    <h3>You can also send us a message through the form below:</h3>
+                </div>
+                <div class="c-form">
+                    <form action="{% url 'feedback' %}" method="post">
+                        {% csrf_token %}
+                        <div class="cont-user-data">
+                            {{ form.name }}
+                            {{ form.email }}
+                            {{ form.website }}
+                        </div>
+                        <div class="cont-message">
+                            {{ form.message }}
+                        </div>
+                        <div class="contact-button">
+                            <button type="submit" class="sub-but-login">Send</button>
+                            <button type="reset" class="res-but">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        <h3>You can also send us a message throught the form below:</h3>
-        <form action="{% url 'feedback' %}" method="post">
-            {% csrf_token %}
-            {{ form }}
-            <button type="submit">Add</button>
-            <button type="reset">Reset</button>
-        </form>
     </div>
 {% endblock %}

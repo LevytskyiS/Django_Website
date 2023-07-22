@@ -46,7 +46,7 @@ ul, li {
 
 .container {
 	/*позиционирование по центру*/
-	max-width: 1366px;
+	max-width: 1000px;
 	margin: 0px auto; 
 	display: flex;
 	flex-direction: column;
@@ -69,7 +69,7 @@ header a {
 	background-image: url("../img/bg-image.jpg");
 	background-repeat: no-repeat;
 	background-position: right;
-	background-size: 1100px 700px;
+	background-size: 700px 400px;
 }
 
 .nav {
@@ -210,22 +210,29 @@ header a {
 }
 
 .description h3 {
-	font-size: 20px;
+	font-size: 18px;
 	letter-spacing: 0.05rem;
+	margin: 0;
 }
 
 .disc-left {
 	display: flex;
-	width: 50%;
 	flex-direction: column;
-	padding-right: 2%;
+	margin-right: 2%;
 }
 
 .disc-right {
 	display: flex;
 	flex-direction: column;
-	padding-left: 2%;
-	width: 50%;
+	margin-left: 2%;
+}
+
+.ds-left-title {
+	height: 70px;
+}
+
+.ds-right-title {
+	height: 70px
 }
 
 .gallery {
@@ -286,7 +293,7 @@ header a {
 }
 
 .detail-tags a {
-	color: #000;
+	color: tomato;
 	text-decoration: none;
 	margin-right: 1%;
 	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -302,6 +309,7 @@ header a {
 	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 	font-size: 20px;
 	line-height: 25px;
+
 }
 
 .comment-count {
@@ -346,15 +354,18 @@ header a {
 	margin-bottom: 10%;
 }
 
-.form-name input {
+.form-name {
+	margin-bottom: 5%;
+	display: flex;
+	justify-content: space-between;
+}
 
-	width: 33%;
+.form-name input {
+	width: 30%;
 	height: 40px;
-	margin-bottom: 3%;
 	border: 0.2rem solid black;
 	border-radius: 30px;
 	padding-left: 10px;
-
 }
 
 .form-message input {
@@ -366,26 +377,33 @@ header a {
 	border-radius: 30px;
 }
 
+.comment-buttons {
+	display: flex;
+	justify-content: center;
+}
+
 .sub-but {
-	margin-right: 20px;
+	margin-right: 10px;
     background-color: greenyellow;
     color: black;
     border:none;
 	border: 0.2rem solid black;
 	border-radius: 30px;
 	width: 100px;
-	height: 40px
+	height: 40px;
+	cursor: pointer;
 }
 
 .res-but {
-	margin-right: 20px;
+	margin-left: 10px;
     background-color: red;
     color: black;
     border:none;
 	border: 0.2rem solid black;
 	border-radius: 30px;
 	width: 100px;
-	height: 40px
+	height: 40px;
+	cursor: pointer;
 }
 
 .container-sign-in {
@@ -438,7 +456,8 @@ header a {
 	justify-content: center;
 	align-items: center;
 	height: 25%;
-	width: 40%;
+	width: 50%;
+
 	
 	/* font-size: 15px;
 	font-family: 'Open Sans', sans-serif;
@@ -482,6 +501,7 @@ header a {
 	flex-direction: column;
 	width: 70%;	
 	margin-bottom: 5%;
+	height: 56vh;
 }
 
 .news-wrapper h3 {
@@ -516,7 +536,8 @@ header a {
 
 .new-category a {
 	font-size: 15px;
-	color: #000;
+	color: lime;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .new-category a:hover {
@@ -641,4 +662,111 @@ header a {
 	width: 100px;
 	height: 40px;
 	cursor: pointer;
+}
+
+.contact-wrapper {
+	padding-top: 5%;
+	display: flex;
+	flex-direction: column;
+	/* height: 75vh; */
+	width: 100%;
+}
+
+.socials {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 5%;
+	width: 100%;
+}
+
+.socials-text {
+	margin-bottom: 3%;
+}
+
+.socials-list {
+	width: 100%;
+}
+
+.socials-list > ul {
+	text-align: center;
+}
+
+.socials-list > ul li {
+	display: inline;
+	align-items: center;
+	margin: 0 3%;
+
+}
+
+.contact-form {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.cont-form-text {
+	text-align: center;
+	margin: 5% 0;
+}
+
+.cont-form-text h3 {
+	margin: 0;
+}
+
+.c-form {
+	display: flex;
+	flex-direction: column;	
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 10%;
+}
+
+.c-form form {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	width: 60%;
+}
+
+.cont-user-data {
+	margin-bottom: 5%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.cont-user-data input {
+	border: 0.2rem solid black;
+	border-radius: 30px;
+	width: 30%;
+	height: 40px;
+	text-align: center;
+}
+
+.cont-message {
+	display: flex;
+	justify-content: center;
+	margin: 4% 0;
+}
+
+.cont-message textarea {
+	border: 0.2rem solid black;
+	border-radius: 30px;
+	padding: 2%;
+	width: 100%;
+	height: 100px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+}
+
+.contact-button {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.contact-button button {
+	margin: 0 5%;
 }
