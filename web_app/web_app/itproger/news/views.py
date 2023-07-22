@@ -2,6 +2,7 @@ from typing import Any, Dict
 from django.db.models.query import QuerySet
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_protect
+from django.http import HttpRequest
 from django.views.generic import (
     DetailView,
     ListView,
@@ -50,9 +51,11 @@ class PostDetailView(DetailView):
 class CreateComment(CreateView):
     model = Comment
     form_class = CommentForm
+    request = HttpRequest()
 
     def form_valid(self, form):
         form.instance.post_id = self.kwargs.get("pk")
+        form.instance.user_id = self.request.user.id
         self.object = form.save()
         return super().form_valid(form)
 

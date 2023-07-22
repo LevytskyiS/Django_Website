@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
 from mptt.models import MPTTModel, TreeForeignKey
+from ckeditor.fields import RichTextField
 
 
 class Category(MPTTModel):
@@ -41,7 +42,7 @@ class Tag(models.Model):
 class Post(models.Model):
     author = models.ForeignKey(User, related_name="posts", on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
-    text = models.TextField()
+    text = RichTextField()
     image = models.ImageField(upload_to="articles/")
     create_at = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey(
@@ -63,11 +64,12 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    name = models.CharField(max_length=50)
-    email = models.CharField(max_length=100)
-    website = models.CharField(max_length=150, blank=True, null=True)
+    # name = models.CharField(max_length=50)
+    # email = models.CharField(max_length=100)
+    # website = models.CharField(max_length=150, blank=True, null=True)
     message = models.TextField(max_length=500)
     create_at = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(User, related_name="comment", on_delete=models.CASCADE)
     post = models.ForeignKey(Post, related_name="comment", on_delete=models.CASCADE)
 
     def __str__(self):

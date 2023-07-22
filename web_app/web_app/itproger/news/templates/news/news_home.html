@@ -4,10 +4,11 @@
 
 {% block content %}
 
-    <section id="news" class="news">
         <div class="container">
             <div class="news-wrapper">
-                <h3>Latest News</h3>
+                <div class="news-list-title">
+                    <h3>Latest News</h3>
+                </div>
                 <div class="list-news">
                     {% if posts %}
                         {% for post in posts %}
@@ -15,17 +16,19 @@
                             <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
                         </div>
                         <div class="new-preview">
-                            <p>{{ post.text|slice:":100" }}</p>
+                            <p>{{ post.text|slice:":100"|safe }}</p>
                         </div>
                         <div class="new-category">
                             <a href="{{ post.category.get_absolute_url }}">{{ post.category }}</a>
                         </div>
                         {% endfor %}
                     {% else %}
-                        <p>No recent news available at this time...</p>
+                        <div class="empty-list">
+                            <p>No recent news available at this time...</p>
+                        </div>
                     {% endif %}
                 </div>      
-                 {% if posts %}     
+                {% if posts %}     
                 <div class="step-links">
                     {% if page_obj.has_previous %}
                         <a href="?page=1">FIRST</a>
@@ -44,7 +47,6 @@
                 </div>
             </div>
         </div>
-    </section>
 
 
 

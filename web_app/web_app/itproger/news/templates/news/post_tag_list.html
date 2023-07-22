@@ -4,47 +4,49 @@
 
 {% block content %}
 
-    <section id="news" class="news">
-        <div class="container">
-            <div class="news-wrapper">
+    <div class="container">
+        <div class="news-wrapper">
+            <div class="news-list-title">
                 <h3>Latest News</h3>
-                <div class="list-news">
-                    {% if posts %}
-                        {% for post in posts %}
-                        <div class="new-title">
-                            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-                        </div>
-                        <div class="new-preview">
-                            <p>{{ post.text|slice:":100" }}</p>
-                        </div>
-                        <div class="new-category">
-                            <a href="{{ post.category.get_absolute_url }}">{{ post.category }}</a>
-                        </div>
-                        {% endfor %}
-                    {% else %}
+            </div>
+            <div class="list-news">
+                {% if posts %}
+                    {% for post in posts %}
+                    <div class="new-title">
+                        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                    </div>
+                    <div class="new-preview">
+                        <p>{{ post.text|slice:":100"|safe }}</p>
+                    </div>
+                    <div class="new-category">
+                        <a href="{{ post.category.get_absolute_url }}">{{ post.category }}</a>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="empty-list">
                         <p>No recent news available at this time...</p>
-                    {% endif %}
-                </div>           
-                <div class="step-links">
-                    {% if page_obj.has_previous %}
-                        <a href="?page=1">FIRST</a>
-                        <a href="?page={{ page_obj.previous_page_number }}">PREVIOUS</a>
-                    {% endif %}
+                    </div>
+                {% endif %}
+            </div>
+            {% if posts %}           
+            <div class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1">FIRST</a>
+                    <a href="?page={{ page_obj.previous_page_number }}">PREVIOUS</a>
+                {% endif %}
 
-                    <span class="current">
-                        | Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }} |
-                    </span>
+                <span class="current">
+                    | Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }} |
+                </span>
 
-                    {% if page_obj.has_next %}
-                        <a href="?page={{ page_obj.next_page_number }}">NEXT</a>
-                        <a href="?page={{ page_obj.paginator.num_pages }}">LAST</a>
-                    {% endif %}
-                </div>
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">NEXT</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">LAST</a>
+                {% endif %}
+            {% endif %}
             </div>
         </div>
-    </section>
-
-
+    </div>
 
 {% endblock %}
 

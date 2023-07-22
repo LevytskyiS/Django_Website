@@ -84,7 +84,7 @@ header a {
 
 .menu {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
   	align-items: center;
 	width: 50%;
 	height: 100%;
@@ -283,7 +283,7 @@ header a {
 
 .new-detail p {
 	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-	font-size: 20px;
+	font-size: 15px;
 	line-height: 25px;
 	text-align: justify;
 }
@@ -487,25 +487,34 @@ header a {
 	color: white;
 }
 
-/* .footer-links a {
-	display: inline-block;
-	margin-right: 67px;
-	align-items: center;
-	margin: auto;
-} */
-
 /* NEWS LIST PAGE */
+
+.news {
+	height: 100%;
+}
 
 .news-wrapper {
 	display: flex;
 	flex-direction: column;
 	width: 70%;	
 	margin-bottom: 5%;
-	height: 56vh;
 }
 
 .news-wrapper h3 {
 	letter-spacing: 0.1em;
+	margin: 0;
+}
+
+.empty-list {
+	height: 75vh;
+	background-image: url("../img/bg-image.jpg");
+	background-repeat: no-repeat;
+	background-position: right;
+	background-size: 700px 400px;
+}
+
+.news-list-title {
+	margin: 5% 0 2% 0;
 }
 
 .list-news {
@@ -520,11 +529,16 @@ header a {
 .new-title a {
 	text-transform: uppercase;
 	font-size: 25px;
+	font-weight: normal;
 	color: #000;
 }
 
 .new-title a:hover {
 	border-bottom: 1px solid black;
+}
+
+.new-title a:visited {
+	color: black;
 }
 
 .new-preview {
@@ -536,7 +550,7 @@ header a {
 
 .new-category a {
 	font-size: 15px;
-	color: lime;
+	color: orange;
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 

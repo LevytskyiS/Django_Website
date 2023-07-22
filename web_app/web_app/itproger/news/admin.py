@@ -13,7 +13,8 @@ class PostAdmin(admin.ModelAdmin):
 
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ["name", "email", "website", "create_at", "id"]
+    # list_display = ["name", "email", "website", "create_at", "id"]
+    list_display = ["message", "user_id", "create_at", "id"]
     save_as = True
     save_on_top = True
 

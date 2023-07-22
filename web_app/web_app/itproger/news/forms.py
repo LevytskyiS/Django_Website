@@ -24,15 +24,15 @@ from .models import Post, Comment
 class CommentForm(ModelForm):
     class Meta:
         model = Comment
-        exclude = ["create_at", "post"]
+        exclude = ["user", "post"]
         widgets = {
-            "name": TextInput(attrs={"class": "form-control", "placeholder": "Name"}),
-            "email": EmailInput(
-                attrs={"class": "form-control", "placeholder": "Email"}
-            ),
-            "website": URLInput(
-                attrs={"class": "form-control", "placeholder": "Website"}
-            ),
+            # "name": TextInput(attrs={"class": "form-control", "placeholder": "Name"}),
+            # "email": EmailInput(
+            #     attrs={"class": "form-control", "placeholder": "Email"}
+            # ),
+            # "website": URLInput(
+            #     attrs={"class": "form-control", "placeholder": "Website"}
+            # ),
             "message": TextInput(
                 attrs={"class": "form-control", "placeholder": "Your message"}
             ),
