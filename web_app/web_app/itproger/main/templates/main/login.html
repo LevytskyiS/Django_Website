@@ -19,9 +19,9 @@
                     <button type="submit" class="sub-but-login">Log in</button>
                     <input type="hidden" name="next" value="{% url 'home' %}">
                 </div>
-                {# <div class="small text-center"> #}
-                {# <a href="{% url 'quoteapp:password_reset' %}" class="text-center"><i>Forgot Password?</i></a> #}
-                {# </div> #}
+                <div class="small text-center">
+                <a href="{% url 'password_reset' %}" class="text-center"><i>Forgot Password?</i></a>
+                </div>
             </form>
         </div>
     </div>

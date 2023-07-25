@@ -784,3 +784,12 @@ header a {
 .contact-button button {
 	margin: 0 5%;
 }
+
+.pas-res-wrapper {
+	height: 75vh;
+}
+
+.pass-res {
+	height: 100%;
+	padding-top: 200px;
+}

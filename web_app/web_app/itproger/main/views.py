@@ -3,6 +3,8 @@ from django.urls import reverse_lazy
 from django.contrib.auth import logout, login
 from django.views.generic import CreateView
 from django.contrib.auth.views import LoginView, PasswordResetView, LogoutView
+from django.contrib.auth.views import PasswordResetView
+from django.contrib.messages.views import SuccessMessageMixin
 
 from .forms import RegisterUserForm, LoginUserForm
 
@@ -40,6 +42,12 @@ class LogOutUser(LogoutView):
     next_page = "/"
 
 
-# def logoutuser(request):
-#     logout(request)
-#     return redirect(to="main:home")
+class ResetPasswordView(SuccessMessageMixin, PasswordResetView):
+    template_name = "main/password_reset.html"
+    email_template_name = "main/password_reset_email.html"
+    html_email_template_name = "main/password_reset_email.html"
+    success_url = reverse_lazy("password_reset_done")
+    success_message = (
+        "An email with instructions to reset your password has been sent to %(email)s."
+    )
+    subject_template_name = "main/password_reset_subject.txt"

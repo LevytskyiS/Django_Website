@@ -1,0 +1,3 @@
+docker build . --platform=linux/amd64 -t pycoder7/djsite:0.1.2
+
+docker push pycoder7/djsite:0.1.2
