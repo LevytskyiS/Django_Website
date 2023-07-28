@@ -15,9 +15,9 @@
                         <div class="new-title">
                             <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
                         </div>
-                        <div class="new-preview">
-                            <p>{{ post.text|slice:":100"|safe }}</p>
-                        </div>
+                        {# <div class="new-preview"> #}
+                            {# <p>{{ post.text|slice:":100"|safe }}</p> #}
+                        {# </div> #}
                         <div class="new-category">
                             <a href="{{ post.category.get_absolute_url }}">{{ post.category }}</a>
                         </div>
